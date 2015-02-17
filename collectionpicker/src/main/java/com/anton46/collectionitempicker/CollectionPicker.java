@@ -65,35 +65,35 @@ public class CollectionPicker extends LinearLayout {
         TypedArray typeArray = context
                 .obtainStyledAttributes(attrs, R.styleable.CollectionPicker);
         this.mItemMargin = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_itemMargin,
+                .getDimension(R.styleable.CollectionPicker_cp_itemMargin,
                         Utils.dpToPx(this.getContext(), mItemMargin));
         this.textPaddingLeft = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_textPaddingLeft,
+                .getDimension(R.styleable.CollectionPicker_cp_textPaddingLeft,
                         Utils.dpToPx(this.getContext(), textPaddingLeft));
         this.textPaddingRight = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_textPaddingRight,
+                .getDimension(R.styleable.CollectionPicker_cp_textPaddingRight,
                         Utils.dpToPx(this.getContext(),
                                 textPaddingRight));
         this.textPaddingTop = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_textPaddingTop,
+                .getDimension(R.styleable.CollectionPicker_cp_textPaddingTop,
                         Utils.dpToPx(this.getContext(), textPaddingTop));
         this.texPaddingBottom = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_textPaddingBottom,
+                .getDimension(R.styleable.CollectionPicker_cp_textPaddingBottom,
                         Utils.dpToPx(this.getContext(),
                                 texPaddingBottom));
-        this.mAddIcon = typeArray.getResourceId(R.styleable.CollectionPicker_addIcon, mAddIcon);
-        this.mCancelIcon = typeArray.getResourceId(R.styleable.CollectionPicker_cancelIcon,
+        this.mAddIcon = typeArray.getResourceId(R.styleable.CollectionPicker_cp_addIcon, mAddIcon);
+        this.mCancelIcon = typeArray.getResourceId(R.styleable.CollectionPicker_cp_cancelIcon,
                 mCancelIcon);
         this.mLayoutBackgroundColorNormal = typeArray.getColor(
-                R.styleable.CollectionPicker_itemBackgroundNormal,
+                R.styleable.CollectionPicker_cp_itemBackgroundNormal,
                 mLayoutBackgroundColorNormal);
         this.mLayoutBackgroundColorPressed = typeArray.getColor(
-                R.styleable.CollectionPicker_itemBackgroundPressed,
+                R.styleable.CollectionPicker_cp_itemBackgroundPressed,
                 mLayoutBackgroundColorPressed);
         this.mRadius = (int) typeArray
-                .getDimension(R.styleable.CollectionPicker_itemRadius, mRadius);
+                .getDimension(R.styleable.CollectionPicker_cp_itemRadius, mRadius);
         this.mTextColor = typeArray
-                .getColor(R.styleable.CollectionPicker_itemTextColor, mTextColor);
+                .getColor(R.styleable.CollectionPicker_cp_itemTextColor, mTextColor);
         typeArray.recycle();
 
         setOrientation(VERTICAL);
