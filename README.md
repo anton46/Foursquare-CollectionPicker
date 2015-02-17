@@ -20,6 +20,8 @@ compile 'com.anton46:collection-picker:1.0.0'
 </dependency>
 ````
 
+Declare a `CollectionPicker` inside your XML layout file 
+
 ```xml
  <com.anton46.collectionitempicker.CollectionPicker
         android:id="@+id/collection_item_picker"
