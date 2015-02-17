@@ -39,6 +39,21 @@ Declare a `CollectionPicker` inside your XML layout file
         app:cp_textPaddingTop="5dp" />
 ```
 
+Add Items
+```java
+        List<Item> items = new ArrayList<>();
+        items.add(new Item("item1", "Items 1"));
+        
+        CollectionPicker picker = (CollectionPicker) findViewById(R.id.collection_item_picker);
+        picker.setItems(items);
+        picker.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClick(Item item, int position) {
+            
+            }
+        });
+```
+
 Configure using xml attributes in code : 
 
 ```xml
