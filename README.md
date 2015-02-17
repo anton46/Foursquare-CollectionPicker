@@ -1,5 +1,5 @@
 # Forsquare-CollectionPicker
-Collection Picker is an Android View library which looks like Forsquare Taste picker
+Collection Picker is an Android View library which looks like Forsquare Tastes picker
 
 ![Example image](./image1.png)    ![Example image](./image2.png)
 
