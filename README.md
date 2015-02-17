@@ -6,6 +6,20 @@ Collection Picker is an Android View library which looks like Forsquare Tastes p
 
 
 ## Usage
+
+**Gradle**
+```gradle
+compile 'com.anton46:collection-picker:1.0.0'
+````
+**Maven**
+```xml
+<dependency>
+    <groupId>com.anton46</groupId>
+    <artifactId>collection-picker</artifactId>
+    <version>1.0.0</version>
+</dependency>
+````
+
 ```xml
  <com.anton46.collectionitempicker.CollectionPicker
         android:id="@+id/collection_item_picker"
