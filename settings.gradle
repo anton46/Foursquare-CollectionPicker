@@ -1,1 +1,1 @@
-include ':app', ':collectionpicker'
+include ':sample', ':collectionpicker'

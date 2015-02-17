@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
                 } else {
                     counter--;
                 }
-                mTextView.setText(counter + " items has selected");
+                mTextView.setText(counter + " Items Selected");
             }
         });
 

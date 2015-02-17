@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="16dp"
     android:orientation="vertical">
 
     <com.anton46.collectionitempicker.CollectionPicker
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="0 Items has Selected"
+        android:text="0 Items Selected"
         android:layout_margin="10dp"/>
 
 </LinearLayout>
