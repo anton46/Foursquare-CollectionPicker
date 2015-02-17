@@ -55,6 +55,6 @@ Developed by
 * Anton Nurdin Tuhadiansyah (anton.work19@gmail.com)
 * [anton46.com][1]
 
-[1]: anton46.com
+[1]: http://anton46.com
 
 
