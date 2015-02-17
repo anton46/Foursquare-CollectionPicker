@@ -53,5 +53,8 @@ Configure using xml attributes in code :
 Developed by
 ========================
 * Anton Nurdin Tuhadiansyah (anton.work19@gmail.com)
-* [1]: anton46.com
+* [anton46.com][1]
+
+[1]: anton46.com
+
 
