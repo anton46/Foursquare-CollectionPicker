@@ -158,7 +158,11 @@ public class CollectionPicker extends LinearLayout {
                         mCheckedItems.remove(item.id);
                     }
 
-                    itemLayout.setBackground(getSelector(item));
+                    if (isJellyBeanAndAbove()) {
+                        itemLayout.setBackground(getSelector(item));
+                    } else {
+                        itemLayout.setBackgroundDrawable(getSelector(item));
+                    }
                     ImageView iconView = (ImageView) itemLayout.findViewById(R.id.item_icon);
                     iconView.setBackgroundResource(getItemIcon(item.isSelected));
                     if (mClickListener != null) {
@@ -201,7 +205,11 @@ public class CollectionPicker extends LinearLayout {
 
     private View createItemView(Item item) {
         View view = mInflater.inflate(R.layout.item_layout, this, false);
-        view.setBackground(getSelector(item));
+        if (isJellyBeanAndAbove()) {
+            view.setBackground(getSelector(item));
+        } else {
+            view.setBackgroundDrawable(getSelector(item));
+        }
 
         return view;
     }
@@ -285,7 +293,6 @@ public class CollectionPicker extends LinearLayout {
         return states;
     }
 
-
     public List<Item> getItems() {
         return mItems;
     }
@@ -298,14 +305,15 @@ public class CollectionPicker extends LinearLayout {
         mItems.clear();
     }
 
-    /**
-     * setter for OnChipSelectListener
-     */
     public void setOnItemClickListener(OnItemClickListener clickListener) {
         mClickListener = clickListener;
     }
 
-    public void animateView(final View view) {
+    private boolean isJellyBeanAndAbove() {
+        return android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN;
+    }
+
+    private void animateView(final View view) {
         view.setScaleY(1f);
         view.setScaleX(1f);
 
@@ -339,7 +347,7 @@ public class CollectionPicker extends LinearLayout {
                 .start();
     }
 
-    public void reverseAnimation(View view) {
+    private void reverseAnimation(View view) {
         view.setScaleY(1.2f);
         view.setScaleX(1.2f);
 
