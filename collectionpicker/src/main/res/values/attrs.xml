@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CollectionPicker">
+        <attr name="itemRadius" format="dimension" />
+        <attr name="itemBackgroundNormal" format="color" />
+        <attr name="itemBackgroundPressed" format="color" />
+        <attr name="addIcon" format="reference" />
+        <attr name="cancelIcon" format="reference" />
+        <attr name="itemMargin" format="dimension" />
+        <attr name="itemTextColor" format="color"/>
+        <attr name="textPaddingLeft" format="dimension" />
+        <attr name="textPaddingRight" format="dimension" />
+        <attr name="textPaddingTop" format="dimension" />
+        <attr name="textPaddingBottom" format="dimension" />
+    </declare-styleable>
+</resources>
