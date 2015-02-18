@@ -32,7 +32,7 @@ public class CollectionPicker extends LinearLayout {
 
     private List<Item> mItems = new ArrayList<>();
     private LinearLayout mRow;
-    private Set<String> mCheckedItems = new HashSet<>();
+    private Set<String> mCheckedItems;
     private OnItemClickListener mClickListener;
     private int mWidth;
     private int mItemMargin = 10;
