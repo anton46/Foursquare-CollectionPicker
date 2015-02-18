@@ -1,6 +1,11 @@
 # Forsquare-CollectionPicker
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.anton46/collection-picker/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.anton46/collection-picker/)
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Foursquare--CollectionPicker-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1560)
+
+Support :
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+
 
 Collection Picker is an Android View library which looks like Foursquare Tastes picker. For more information see the [website](https://github.com/anton46/Forsquare-CollectionPicker).
 
