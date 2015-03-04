@@ -62,6 +62,24 @@ public class MainActivity extends ActionBarActivity {
         items.add(new Item("c", "Pizza"));
         items.add(new Item("d", "Burger"));
         items.add(new Item("e", "Ice Cream"));
+        items.add(new Item("c", "Pizza"));
+        items.add(new Item("d", "Burger"));
+        items.add(new Item("e", "Ice Cream"));
+        items.add(new Item("g", "Goods for working"));
+        items.add(new Item("h", "Romantic Places"));
+        items.add(new Item("f", "Japanese food"));
+        items.add(new Item("c", "Pizza"));
+        items.add(new Item("d", "Burger"));
+        items.add(new Item("e", "Ice Cream"));
+        items.add(new Item("c", "Pizza"));
+        items.add(new Item("d", "Burger"));
+        items.add(new Item("e", "Ice Cream"));
+        items.add(new Item("g", "Goods for working"));
+        items.add(new Item("h", "Romantic Places"));
+        items.add(new Item("f", "Japanese food"));
+        items.add(new Item("c", "Pizza"));
+        items.add(new Item("d", "Burger"));
+        items.add(new Item("e", "Ice Cream"));
         return items;
     }
 }

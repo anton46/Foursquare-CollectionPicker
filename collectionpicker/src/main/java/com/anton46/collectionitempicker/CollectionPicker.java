@@ -19,8 +19,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class CollectionPicker extends LinearLayout {
@@ -32,7 +35,7 @@ public class CollectionPicker extends LinearLayout {
 
     private List<Item> mItems = new ArrayList<>();
     private LinearLayout mRow;
-    private Set<String> mCheckedItems;
+    private HashMap<String, Object> mCheckedItems;
     private OnItemClickListener mClickListener;
     private int mWidth;
     private int mItemMargin = 10;
@@ -119,11 +122,11 @@ public class CollectionPicker extends LinearLayout {
     /**
      * Selected flags
      */
-    public void setCheckedItems(Set<String> checkedItems) {
+    public void setCheckedItems(HashMap<String, Object> checkedItems) {
         mCheckedItems = checkedItems;
     }
 
-    public Set<String> getCheckedItems() {
+    public HashMap<String, Object> getCheckedItems() {
         return mCheckedItems;
     }
 
@@ -141,7 +144,7 @@ public class CollectionPicker extends LinearLayout {
 
         for (int i = 0; i < mItems.size(); i++) {
             final Item item = mItems.get(i);
-            if (mCheckedItems != null && mCheckedItems.contains(item.id)) {
+            if (mCheckedItems != null && mCheckedItems.containsKey(item.id)) {
                 item.isSelected = true;
             }
 
@@ -153,7 +156,7 @@ public class CollectionPicker extends LinearLayout {
                     animateView(v);
                     item.isSelected = !item.isSelected;
                     if (item.isSelected) {
-                        mCheckedItems.add(item.id);
+                        mCheckedItems.put(item.id, item);
                     } else {
                         mCheckedItems.remove(item.id);
                     }
