@@ -39,7 +39,8 @@ Declare a `CollectionPicker` inside your XML layout file
         app:cp_textPaddingBottom="5dp"
         app:cp_textPaddingLeft="10dp"
         app:cp_textPaddingRight="10dp"
-        app:cp_textPaddingTop="5dp" />
+        app:cp_textPaddingTop="5dp" 
+        app:cp_simplified="false" />
 ```
 
 Add Items
