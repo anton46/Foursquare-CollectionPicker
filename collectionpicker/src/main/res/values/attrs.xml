@@ -12,5 +12,6 @@
         <attr name="cp_textPaddingRight" format="dimension" />
         <attr name="cp_textPaddingTop" format="dimension" />
         <attr name="cp_textPaddingBottom" format="dimension" />
+        <attr name="cp_simplified" format="boolean" />
     </declare-styleable>
 </resources>

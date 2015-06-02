@@ -1,7 +1,5 @@
 package com.anton46.collectionitempicker;
 
-import com.anton46.collectionpicker.R;
-
 import android.animation.Animator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,13 +16,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.anton46.collectionpicker.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 public class CollectionPicker extends LinearLayout {
 
@@ -35,7 +31,7 @@ public class CollectionPicker extends LinearLayout {
 
     private List<Item> mItems = new ArrayList<>();
     private LinearLayout mRow;
-    private HashMap<String, Object> mCheckedItems = new HashMap<>();
+    private HashMap<String, Object> mCheckedItems =  new HashMap<>();
     private OnItemClickListener mClickListener;
     private int mWidth;
     private int mItemMargin = 10;
@@ -50,6 +46,8 @@ public class CollectionPicker extends LinearLayout {
     private int mTextColor = android.R.color.white;
     private int mRadius = 10;
     private boolean mInitialized;
+
+    private boolean simplifiedTags;
 
 
     public CollectionPicker(Context context) {
@@ -97,6 +95,7 @@ public class CollectionPicker extends LinearLayout {
                 .getDimension(R.styleable.CollectionPicker_cp_itemRadius, mRadius);
         this.mTextColor = typeArray
                 .getColor(R.styleable.CollectionPicker_cp_itemTextColor, mTextColor);
+        this.simplifiedTags = typeArray.getBoolean(R.styleable.CollectionPicker_cp_simplified, false);
         typeArray.recycle();
 
         setOrientation(VERTICAL);
@@ -150,29 +149,32 @@ public class CollectionPicker extends LinearLayout {
 
             final int position = i;
             final View itemLayout = createItemView(item);
-            itemLayout.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    animateView(v);
-                    item.isSelected = !item.isSelected;
-                    if (item.isSelected) {
-                        mCheckedItems.put(item.id, item);
-                    } else {
-                        mCheckedItems.remove(item.id);
-                    }
 
-                    if (isJellyBeanAndAbove()) {
-                        itemLayout.setBackground(getSelector(item));
-                    } else {
-                        itemLayout.setBackgroundDrawable(getSelector(item));
+            if (!simplifiedTags) {
+                itemLayout.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        animateView(v);
+                        item.isSelected = !item.isSelected;
+                        if (item.isSelected) {
+                            mCheckedItems.put(item.id, item);
+                        } else {
+                            mCheckedItems.remove(item.id);
+                        }
+
+                        if (isJellyBeanAndAbove()) {
+                            itemLayout.setBackground(getSelector(item));
+                        } else {
+                            itemLayout.setBackgroundDrawable(getSelector(item));
+                        }
+                        ImageView iconView = (ImageView) itemLayout.findViewById(R.id.item_icon);
+                        iconView.setBackgroundResource(getItemIcon(item.isSelected));
+                        if (mClickListener != null) {
+                            mClickListener.onClick(item, position);
+                        }
                     }
-                    ImageView iconView = (ImageView) itemLayout.findViewById(R.id.item_icon);
-                    iconView.setBackgroundResource(getItemIcon(item.isSelected));
-                    if (mClickListener != null) {
-                        mClickListener.onClick(item, position);
-                    }
-                }
-            });
+                });
+            }
 
             TextView itemTextView = (TextView) itemLayout.findViewById(R.id.item_name);
             itemTextView.setText(item.text);
@@ -183,9 +185,14 @@ public class CollectionPicker extends LinearLayout {
             float itemWidth = itemTextView.getPaint().measureText(item.text) + textPaddingLeft
                     + textPaddingRight;
 
+            // if (!simplifiedTags) {
             ImageView indicatorView = (ImageView) itemLayout.findViewById(R.id.item_icon);
             indicatorView.setBackgroundResource(getItemIcon(item.isSelected));
             indicatorView.setPadding(0, textPaddingTop, textPaddingRight, texPaddingBottom);
+
+            if (simplifiedTags) {
+                indicatorView.setVisibility(View.GONE);
+            }
 
             itemWidth += Utils.dpToPx(getContext(), 30) + textPaddingLeft
                     + textPaddingRight;
@@ -204,6 +211,7 @@ public class CollectionPicker extends LinearLayout {
             }
             totalPadding += itemWidth;
         }
+        // }
     }
 
     private View createItemView(Item item) {
@@ -238,7 +246,7 @@ public class CollectionPicker extends LinearLayout {
     }
 
     private void addItemView(View itemView, ViewGroup.LayoutParams chipParams, boolean newLine,
-            int position) {
+                             int position) {
         if (mRow == null || newLine) {
             mRow = new LinearLayout(getContext());
             mRow.setGravity(Gravity.CENTER);
