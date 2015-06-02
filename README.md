@@ -82,6 +82,8 @@ Configure using xml attributes in code :
         <attr name="cp_textPaddingTop" format="dimension" />
          //Text paddding to bottom  
         <attr name="cp_textPaddingBottom" format="dimension" />
+        //Simplify tags (No icons)
+        <attr name="cp_simplified" format="boolean" />
 ```
 
 Developed by
