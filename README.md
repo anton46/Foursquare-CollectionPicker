@@ -39,7 +39,8 @@ Declare a `CollectionPicker` inside your XML layout file
         app:cp_textPaddingBottom="5dp"
         app:cp_textPaddingLeft="10dp"
         app:cp_textPaddingRight="10dp"
-        app:cp_textPaddingTop="5dp" />
+        app:cp_textPaddingTop="5dp" 
+        app:cp_simplified="false" />
 ```
 
 Add Items
@@ -82,6 +83,8 @@ Configure using xml attributes in code :
         <attr name="cp_textPaddingTop" format="dimension" />
          //Text paddding to bottom  
         <attr name="cp_textPaddingBottom" format="dimension" />
+        //Simplify tags (No icons)
+        <attr name="cp_simplified" format="boolean" />
 ```
 
 Developed by
