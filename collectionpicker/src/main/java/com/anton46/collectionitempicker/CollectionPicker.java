@@ -1,5 +1,7 @@
 package com.anton46.collectionitempicker;
 
+import com.anton46.collectionpicker.R;
+
 import android.animation.Animator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -16,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.anton46.collectionpicker.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,7 +31,7 @@ public class CollectionPicker extends LinearLayout {
 
     private List<Item> mItems = new ArrayList<>();
     private LinearLayout mRow;
-    private HashMap<String, Object> mCheckedItems =  new HashMap<>();
+    private HashMap<String, Object> mCheckedItems = new HashMap<>();
     private OnItemClickListener mClickListener;
     private int mWidth;
     private int mItemMargin = 10;
@@ -95,7 +95,8 @@ public class CollectionPicker extends LinearLayout {
                 .getDimension(R.styleable.CollectionPicker_cp_itemRadius, mRadius);
         this.mTextColor = typeArray
                 .getColor(R.styleable.CollectionPicker_cp_itemTextColor, mTextColor);
-        this.simplifiedTags = typeArray.getBoolean(R.styleable.CollectionPicker_cp_simplified, false);
+        this.simplifiedTags = typeArray
+                .getBoolean(R.styleable.CollectionPicker_cp_simplified, false);
         typeArray.recycle();
 
         setOrientation(VERTICAL);
@@ -246,7 +247,7 @@ public class CollectionPicker extends LinearLayout {
     }
 
     private void addItemView(View itemView, ViewGroup.LayoutParams chipParams, boolean newLine,
-                             int position) {
+            int position) {
         if (mRow == null || newLine) {
             mRow = new LinearLayout(getContext());
             mRow.setGravity(Gravity.CENTER);
