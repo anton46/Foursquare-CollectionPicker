@@ -12,14 +12,14 @@ Collection Picker is an Android View library which looks like Foursquare Tastes 
 
 **Gradle**
 ```gradle
-compile 'com.anton46:collection-picker:1.0.0'
+compile 'com.anton46:collection-picker:1.0.2'
 ````
 **Maven**
 ```xml
 <dependency>
     <groupId>com.anton46</groupId>
     <artifactId>collection-picker</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 ````
 
