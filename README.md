@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/anton46/Foursquare-CollectionPicker.svg?branch=master)](http://www.android-gems.com/lib/anton46/Foursquare-CollectionPicker)
+
 # Forsquare-CollectionPicker
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.anton46/collection-picker/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.anton46/collection-picker/) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Foursquare--CollectionPicker-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1560) [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 
